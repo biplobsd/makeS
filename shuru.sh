@@ -5,8 +5,9 @@ passwd -d root
 sudo passwd root
 now
 now
-sudo apt-get --yes --force-yes update && sudo apt-get --yes --force-yes install libcrypto++-dev libc-ares-dev libcurl4-openssl-dev libfreeimage3 libfreeimage-dev && sudo pip install -r https://raw.githubusercontent.com/r0oth3x49/lynda-dl/master/requirements.txt
-  git clone https://github.com/r0oth3x49/lynda-dl.git && git clone https://github.com/meganz/MEGAcmd.git
+sudo apt-get --yes --force-yes update && sudo apt-get --yes --force-yes upgrade && sudo apt-get --yes --force-yes install libcrypto++-dev libc-ares-dev libcurl4-openssl-dev libfreeimage3 libfreeimage-dev && sudo pip install -r https://raw.githubusercontent.com/r0oth3x49/lynda-dl/master/requirements.txt
+  git clone https://github.com/r0oth3x49/lynda-dl.git
+  git clone https://github.com/meganz/MEGAcmd.git
  cd /home/biplobsd11/MEGAcmd/
  sh autogen.sh
  ./configure
