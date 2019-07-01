@@ -16,4 +16,5 @@ now
     sudo make install
     sudo ldconfig
     cd ~
+	go get github.com/anacrolix/torrent/cmd/torrent
     echo -e "\x1B[01;91m This is your root password :\x1B[01;92m now \x1B[0m\x1B[0m"
