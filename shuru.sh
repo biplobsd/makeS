@@ -29,20 +29,16 @@ setupProject () {
 	# END #
 }
 
-chRpass () {
+## Change root passward START ##
 sudo -s
-echo "1"
 passwd --lock root
-echo "2"
 passwd -d root
-echo "3"
 sudo passwd root
-now1
-now1
-}
+now
+now
+# END #
 
-chRpass
-# pgInstalling
-# cloneProject
-# setupProject
+pgInstalling
+cloneProject
+setupProject
 echo -e "\x1B[01;91m This is your root password :\x1B[01;92m now \x1B[0m\x1B[0m"
