@@ -2,9 +2,13 @@
 
 chRpass () {
 	sudo -s
+	wait
 	passwd --lock root
+	wait
 	passwd -d root
+	wait
 	sudo passwd root
+	wait
 	now
 	now
 }
