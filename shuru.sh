@@ -1,17 +1,13 @@
 #!/bin/bash
 
-chRpass () {
+# chRpass () {
 	sudo -s
-	wait
 	passwd --lock root
-	wait
 	passwd -d root
-	wait
 	sudo passwd root
-	wait
 	now
 	now
-}
+# }
 
 pgInstalling () {
 	sudo apt-get --yes --force-yes update && sudo apt-get --yes --force-yes install libcrypto++-dev libc-ares-dev libcurl4-openssl-dev libfreeimage3 libfreeimage-dev git autoconf autogen build-essential && sudo pip install -r https://raw.githubusercontent.com/r0oth3x49/lynda-dl/master/requirements.txt
@@ -42,7 +38,7 @@ setupProject () {
 	# END #
 }
 
-chRpass
+# chRpass
 # pgInstalling
 # cloneProject
 # setupProject
