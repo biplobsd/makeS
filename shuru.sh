@@ -29,10 +29,13 @@ setupProject () {
 	# END #
 }
 
- chRpass () {
+chRpass () {
 sudo -s
+echo "1"
 passwd --lock root
+echo "2"
 passwd -d root
+echo "3"
 sudo passwd root
 now1
 now1
