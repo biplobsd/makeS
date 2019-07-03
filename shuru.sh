@@ -34,8 +34,8 @@ sudo -s
 passwd --lock root
 passwd -d root
 sudo passwd root
-now
-now
+now1
+now1
 }
 
 chRpass
