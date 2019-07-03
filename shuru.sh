@@ -1,10 +1,10 @@
 #!/bin/bash
 
 chRpass () {
-	sudo -s ;
-	passwd --lock root ;
-	passwd -d root ;
-	sudo passwd root ;
+	sudo -s
+	passwd --lock root
+	passwd -d root
+	sudo passwd root
 	now
 	now
 }
@@ -42,5 +42,4 @@ chRpass
 # pgInstalling
 # cloneProject
 # setupProject
-
-    echo -e "\x1B[01;91m This is your root password :\x1B[01;92m now \x1B[0m\x1B[0m"
+echo -e "\x1B[01;91m This is your root password :\x1B[01;92m now \x1B[0m\x1B[0m"
