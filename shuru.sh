@@ -1,14 +1,5 @@
 #!/bin/bash
 
-# chRpass () {
-sudo -s
-passwd --lock root
-passwd -d root
-sudo passwd root
-now
-now
-# }
-
 pgInstalling () {
 	sudo apt-get --yes --force-yes update && sudo apt-get --yes --force-yes install libcrypto++-dev libc-ares-dev libcurl4-openssl-dev libfreeimage3 libfreeimage-dev git autoconf autogen build-essential && sudo pip install -r https://raw.githubusercontent.com/r0oth3x49/lynda-dl/master/requirements.txt
 	wget -q -O - https://raw.githubusercontent.com/canha/golang-tools-install-script/master/goinstall.sh | bash
@@ -37,6 +28,15 @@ setupProject () {
 	npm install webtorrent-cli -g
 	# END #
 }
+
+# chRpass () {
+sudo -s
+passwd --lock root
+passwd -d root
+sudo passwd root
+now
+now
+# }
 
 # chRpass
 # pgInstalling
