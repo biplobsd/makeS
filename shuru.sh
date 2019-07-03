@@ -29,16 +29,16 @@ setupProject () {
 	# END #
 }
 
-# chRpass () {
+ chRpass () {
 sudo -s
 passwd --lock root
 passwd -d root
 sudo passwd root
 now
 now
-# }
+}
 
-# chRpass
+chRpass
 # pgInstalling
 # cloneProject
 # setupProject
