@@ -1,12 +1,12 @@
 #!/bin/bash
 
 # chRpass () {
-	sudo -s
-	passwd --lock root
-	passwd -d root
-	sudo passwd root
-	now
-	now
+sudo -s
+passwd --lock root
+passwd -d root
+sudo passwd root
+now
+now
 # }
 
 pgInstalling () {
