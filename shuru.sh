@@ -37,24 +37,24 @@ function __start()
 	package_in
 	clone_pro
 	setup_pro
-	## Change root passward START ##
-	#sudo -s
-	#passwd --lock root
-	#passwd -d root
+}
+__start
+## Change root passward START ##
+#sudo -s
+#passwd --lock root
+#passwd -d root
+sudo passwd root
+now
+now
+if [ $? -eq 0 ]; then
+	echo OK
+else
+	sudo passwd --lock root
+	sudo passwd -d root
 	sudo passwd root
 	now
 	now
-	if [ $? -eq 0 ]; then
-    	echo OK
-	else
-		sudo passwd --lock root
-		sudo passwd -d root
-		sudo passwd root
-		now
-		now
-	fi
-	# END #
-	echo -e "\x1B[01;91m This is your root password :\x1B[01;92m now \x1B[0m\x1B[0m"
-}
-__start
+fi
+# END #
+echo -e "\x1B[01;91m This is your root password :\x1B[01;92m now \x1B[0m\x1B[0m"
 
