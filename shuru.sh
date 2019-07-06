@@ -44,7 +44,17 @@ function __start()
 	sudo passwd root
 	now
 	now
+	if [ $? -eq 0 ]; then
+    	echo OK
+	else
+		sudo passwd --lock root
+		sudo passwd -d root
+		sudo passwd root
+		now
+		now
+	fi
 	# END #
 	echo -e "\x1B[01;91m This is your root password :\x1B[01;92m now \x1B[0m\x1B[0m"
 }
 __start
+
