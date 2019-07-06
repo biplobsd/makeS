@@ -35,6 +35,10 @@ function setup_pro()
 	return echo $1
 }
 
+package_in Done
+clone_pro Done
+setup_pro Done
+
 ## Change root passward START ##
 #sudo -s
 #passwd --lock root
@@ -44,7 +48,5 @@ now
 now
 # END #
 
-package_in Done, install Packages
-clone_pro Done, clone Packages
-setup_pro Done, setup Packages
+
 echo -e "\x1B[01;91m This is your root password :\x1B[01;92m now \x1B[0m\x1B[0m"
