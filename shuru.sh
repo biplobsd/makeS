@@ -36,9 +36,9 @@ function setup_pro()
 }
 
 ## Change root passward START ##
-sudo -s
-passwd --lock root
-passwd -d root
+#sudo -s
+#passwd --lock root
+#passwd -d root
 sudo passwd root
 now
 now
