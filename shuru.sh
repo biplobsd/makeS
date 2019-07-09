@@ -15,15 +15,20 @@ function clone_pro()
 function setup_pro()
 {
 	# MEGAcmd START #
-    cd MEGAcmd/
-	git submodule update --init --recursive
-    sh autogen.sh
-    ./configure
-    make
-    sudo ldconfig
-    sudo make install
-    sudo ldconfig
-    cd ~
+	type mega-cmd
+	if [ $? -eq 0 ]; then
+		echo Mega-cmd alredy installed.
+	else
+		cd MEGAcmd/
+		git submodule update --init --recursive
+		sh autogen.sh
+		./configure
+		make
+		sudo ldconfig
+		sudo make install
+		sudo ldconfig
+		cd ~
+	fi
 	# END #
 	
 	# Torrent CLI START #
@@ -39,7 +44,7 @@ function __start()
 	setup_pro
 }
 __start
-## Change root passward START ##
+#### Change root passward START ####
 #sudo -s
 #passwd --lock root
 #passwd -d root
