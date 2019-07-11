@@ -1,4 +1,15 @@
 #!/bin/bash
+function start_up()
+{
+	cd ~
+	mkdir usr
+	cd usr
+	mkdir 'local'
+	cd ~
+	OUTPUT="$(pwd)/usr/local"
+
+	#echo "${OUTPUT}"
+}
 
 function package_init()
 {
@@ -22,7 +33,8 @@ function setup_pro()
 		cd MEGAcmd/
 		git submodule update --init --recursive
 		sh autogen.sh
-		./configure
+		path_d = pwd
+		./configure --prefix=${OUTPUT}
 		make
 		sudo ldconfig
 		sudo make install
@@ -49,6 +61,7 @@ function setup_pro()
 
 function __start()
 {
+	start_up
 	package_init
 	clone_pro
 	setup_pro
