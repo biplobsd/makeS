@@ -1,15 +1,4 @@
 #!/bin/bash
-function start_up()
-{
-	cd ~
-	mkdir usr
-	cd usr
-	mkdir 'local'
-	cd ~
-	OUTPUT="$(pwd)/usr/local"
-
-	#echo "${OUTPUT}"
-}
 
 function package_init()
 {
@@ -34,7 +23,7 @@ function setup_pro()
 		git submodule update --init --recursive
 		sh autogen.sh
 		path_d = pwd
-		./configure --prefix=${OUTPUT}
+		./configure --disable-parallel --without-szlib --without-pthread --prefix=$HOME
 		make
 		sudo ldconfig
 		sudo make install
@@ -61,7 +50,6 @@ function setup_pro()
 
 function __start()
 {
-	start_up
 	package_init
 	clone_pro
 	setup_pro
