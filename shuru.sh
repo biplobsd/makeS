@@ -19,12 +19,10 @@ function setup_pro()
 	if [ $? -eq 0 ]; then
 		echo Mega-cmd is already installed.
 	else
-		export PATH=$HOME/bin:$PATH
-		export LD_LIBRARY_PATH=$HOME/lib/:$LD_LIBRARY_PATH
 		cd MEGAcmd/
 		git submodule update --init --recursive
 		sh autogen.sh
-		./configure --prefix=$HOME
+		./configure
 		make
 		sudo ldconfig
 		sudo make install
