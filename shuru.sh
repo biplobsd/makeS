@@ -23,10 +23,10 @@ function setup_pro()
 		git submodule update --init --recursive
 		sh autogen.sh
 		path_d = pwd
-		./configure --disable-parallel --without-szlib --without-pthread --prefix=$HOME
+		./configure
 		make
 		sudo ldconfig
-		sudo make install
+		sudo make install DESTDIR=$HOME
 		sudo ldconfig
 		cd ~
 	fi
