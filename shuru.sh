@@ -24,7 +24,6 @@ function setup_pro()
 		cd MEGAcmd/
 		git submodule update --init --recursive
 		sh autogen.sh
-		path_d = pwd
 		./configure --prefix=$HOME
 		make
 		sudo ldconfig
@@ -45,6 +44,11 @@ function setup_pro()
 	if [ $? -eq 0 ]; then
 		echo torrent is already installed.
 	else
+		type npm
+		if [ $? -eq 0 ]; then
+			curl -L https://git.io/n-install | bash -s -- -y
+			.$HOME/.bashrc
+		fi
 		npm install webtorrent-cli -g
 	fi
 	# END #
