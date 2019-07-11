@@ -26,7 +26,7 @@ function setup_pro()
 		./configure
 		make
 		sudo ldconfig
-		sudo make install DESTDIR=$HOME
+		sudo make install
 		sudo ldconfig
 		cd ~
 	fi
