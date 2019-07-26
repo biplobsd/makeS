@@ -2,7 +2,7 @@
 
 function package_init()
 {
-	command sudo apt-get -qq --yes --force-yes update && sudo apt-get -qq --yes --force-yes install libcrypto++-dev libc-ares-dev libcurl4-openssl-dev libfreeimage3 libfreeimage-dev git autoconf autogen build-essential && sudo pip install --quiet -r https://raw.githubusercontent.com/r0oth3x49/lynda-dl/master/requirements.txt
+	command sudo apt-get -qq --yes --force-yes update && sudo apt-get -qq > /dev/null --yes --force-yes install libcrypto++-dev libc-ares-dev libcurl4-openssl-dev libfreeimage3 libfreeimage-dev git autoconf autogen build-essential && sudo pip install --quiet -r https://raw.githubusercontent.com/r0oth3x49/lynda-dl/master/requirements.txt
 	command wget -q -O - https://raw.githubusercontent.com/canha/golang-tools-install-script/master/goinstall.sh | bash
 }
 
