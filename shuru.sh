@@ -21,7 +21,6 @@ function setup_pro()
 		echo Mega-cmd is already installed.
 	else
 		cd MEGAcmd/
-
 		isfileX=( mega-cmd mega-cmd-server mega-exec )
 		for i in "${isfileX[@]}"
 		do
