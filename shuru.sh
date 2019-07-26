@@ -2,7 +2,7 @@
 
 function package_init()
 {
-	command sudo apt-get --yes --force-yes update && sudo apt-get --yes --force-yes install libcrypto++-dev libc-ares-dev libcurl4-openssl-dev libfreeimage3 libfreeimage-dev git autoconf autogen build-essential && sudo pip install -r https://raw.githubusercontent.com/r0oth3x49/lynda-dl/master/requirements.txt
+	command sudo apt-get -qq --yes --force-yes update && sudo apt-get -qq --yes --force-yes install libcrypto++-dev libc-ares-dev libcurl4-openssl-dev libfreeimage3 libfreeimage-dev git autoconf autogen build-essential && sudo pip install --quiet -r https://raw.githubusercontent.com/r0oth3x49/lynda-dl/master/requirements.txt
 	command wget -q -O - https://raw.githubusercontent.com/canha/golang-tools-install-script/master/goinstall.sh | bash
 }
 
@@ -15,18 +15,28 @@ function clone_pro()
 function setup_pro()
 {
 	# MEGAcmd START #
+	notexistF=false
 	type mega-cmd
 	if [ $? -eq 0 ]; then
 		echo Mega-cmd is already installed.
 	else
-		export PATH=$HOME/bin:$PATH
-		export LD_LIBRARY_PATH=$HOME/lib/:$LD_LIBRARY_PATH
 		cd MEGAcmd/
-		git submodule update --init --recursive
-		sh autogen.sh
-		./configure --prefix=$HOME
-		make
-		sudo ldconfig
+
+		isfileX=( mega-cmd mega-cmd-server mega-exec )
+		for i in "${isfileX[@]}"
+		do
+			if [[ ! -f "$i" ]]; then
+				echo "$i not exist setuping..."
+				notexistF=true
+			fi
+		done
+		if ! $notexistF ; then
+			git submodule update --init --recursive
+			sh autogen.sh
+			./configure
+			make
+			sudo ldconfig
+		fi
 		sudo make install
 		sudo ldconfig
 		cd ~
@@ -42,7 +52,7 @@ function setup_pro()
 	fi
 	type webtorrent
 	if [ $? -eq 0 ]; then
-		echo torrent is already installed.
+		echo webtorrent is already installed.
 	else
 		type npm
 		if [ $? -eq 0 ]; then
