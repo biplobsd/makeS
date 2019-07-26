@@ -29,7 +29,7 @@ function setup_pro()
 				notexistF=true
 			fi
 		done
-		if ! $notexistF ; then
+		if $notexistF ; then
 			git submodule update --init --recursive
 			sh autogen.sh
 			./configure
