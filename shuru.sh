@@ -2,7 +2,7 @@
 
 function package_init()
 {
-	command sudo apt-get -qq --yes --force-yes update && sudo apt-get -qq > /dev/null --yes --force-yes install libcrypto++-dev libc-ares-dev libcurl4-openssl-dev libfreeimage3 libfreeimage-dev git autoconf autogen build-essential && sudo pip install --quiet -r https://raw.githubusercontent.com/r0oth3x49/lynda-dl/master/requirements.txt
+	command sudo apt-get -qq --yes --force-yes update && sudo apt-get -qq > /dev/null --yes --force-yes install build-essential libcurl4-openssl-dev autoconf libtool g++ libcrypto++-dev libz-dev libsqlite3-dev libssl-dev libcurl4-gnutls-dev libreadline-dev libpcre++-dev libsodium-dev libc-ares-dev libfreeimage-dev libavcodec-dev libavutil-dev libavformat-dev libswscale-dev libmediainfo-dev libzen-dev libuv1-dev libfreeimage3 git autogen && sudo pip install --quiet -r https://raw.githubusercontent.com/r0oth3x49/lynda-dl/master/requirements.txt
 	command wget -q -O - https://raw.githubusercontent.com/canha/golang-tools-install-script/master/goinstall.sh | bash
 }
 
@@ -25,7 +25,7 @@ function setup_pro()
 		for i in "${isfileX[@]}"
 		do
 			if [[ ! -f "$i" ]]; then
-				echo "$i not exist setuping..."
+				echo "$i not exist."
 				notexistF=true
 			fi
 		done
