@@ -2,7 +2,7 @@
 
 function package_init()
 {
-	sudo apt-get --yes --force-yes update && sudo apt-get --yes --force-yes install build-essential libcurl4-openssl-dev autoconf libtool g++ libcrypto++-dev libz-dev libsqlite3-dev libssl-dev libcurl4-gnutls-dev libreadline-dev libpcre++-dev libsodium-dev libc-ares-dev libfreeimage-dev libavcodec-dev libavutil-dev libavformat-dev libswscale-dev libmediainfo-dev libzen-dev libuv1-dev libfreeimage3 git autogen cryptopp zlib sqlite3 cares libuv ssl sodium && sudo pip install --quiet -r https://raw.githubusercontent.com/r0oth3x49/lynda-dl/master/requirements.txt
+	sudo apt-get --yes --force-yes update && sudo apt-get --yes --force-yes install build-essential libcurl4-openssl-dev autoconf libtool g++ libcrypto++-dev libcrypto++-doc libcrypto++-utils libz-dev libsqlite3-dev libssl-dev libcurl4-gnutls-dev libreadline-dev libpcre++-dev libsodium-dev libc-ares-dev libfreeimage-dev libavcodec-dev libavutil-dev libavformat-dev libswscale-dev libmediainfo-dev libzen-dev libuv1-dev libfreeimage3 git autogen zlib sqlite3 cares libuv ssl sodium && sudo pip install --quiet -r https://raw.githubusercontent.com/r0oth3x49/lynda-dl/master/requirements.txt
 	wget -q -O - https://raw.githubusercontent.com/canha/golang-tools-install-script/master/goinstall.sh | bash
 }
 
