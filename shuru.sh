@@ -39,6 +39,12 @@ function setup_pro()
 		sudo make install
 		sudo ldconfig
 		cd ~
+
+		# Is MEGAcmd installed!
+		type mega-cmd
+		if [ ! $? -eq 0 ]; then
+			echo MEGA_CMD is not installed. Check for Requirements https://github.com/meganz/MEGAcmd#requirements
+		fi
 	fi
 	# END #
 	
