@@ -2,7 +2,7 @@
 
 function package_init()
 {
-	sudo apt-get --yes --force-yes update && sudo apt-get --yes --force-yes install python2.7 libcrypto++-dev libc-ares-dev libcurl4-openssl-dev libfreeimage3 libfreeimage-dev git autoconf autogen build-essential && sudo pip install --quiet -r https://raw.githubusercontent.com/r0oth3x49/lynda-dl/master/requirements.txt
+	sudo apt-get --yes --force-yes update && sudo apt-get --yes --force-yes install python-pip libcrypto++-dev libc-ares-dev libcurl4-openssl-dev libfreeimage3 libfreeimage-dev git autoconf autogen build-essential && sudo pip install --quiet -r https://raw.githubusercontent.com/r0oth3x49/lynda-dl/master/requirements.txt
 	wget -q -O - https://raw.githubusercontent.com/canha/golang-tools-install-script/master/goinstall.sh | bash
 }
 
@@ -62,7 +62,7 @@ function setup_pro()
 		type npm
 		if [ $? -eq 0 ]; then
 			curl -L https://git.io/n-install | bash -s -- -y
-			.$HOME/.bashrc
+			bash $HOME/.bashrc
 		fi
 		npm install webtorrent-cli -g
 	fi
