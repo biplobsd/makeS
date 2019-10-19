@@ -8,7 +8,6 @@ function package_init()
 
 function clone_pro()
 {
-	wget -c -nc -O megacmd.deb https://mega.nz/linux/MEGAsync/Debian_9.0/amd64/megacmd-Debian_9.0_amd64.deb
 	git clone https://github.com/r0oth3x49/lynda-dl.git
 }
 
@@ -20,7 +19,7 @@ function setup_pro()
 	if [ $? -eq 0 ]; then
 		echo Mega-cmd is already installed.
 	else
-		sudo dpkg -i megacmd.deb
+		curl -sL -o/var/cache/apt/archives/MEGAcmd.deb https://mega.nz/linux/MEGAsync/Debian_9.0/amd64/megacmd-Debian_9.0_amd64.deb && sudo dpkg -i /var/cache/apt/archives/MEGAcmd.deb
 	fi
 	# END #
 	
