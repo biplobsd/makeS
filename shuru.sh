@@ -21,11 +21,6 @@ function setup_pro()
 		echo Mega-cmd is already installed.
 	else
 		sudo dpkg -i megacmd.deb
-		# Is MEGAcmd installed!
-		type mega-cmd
-		if [ ! $? -eq 0 ]; then
-			echo MEGA_CMD is not installed. Check for Requirements https://github.com/meganz/MEGAcmd#requirements
-		fi
 	fi
 	# END #
 	
@@ -34,7 +29,7 @@ function setup_pro()
 	if [ $? -eq 0 ]; then
 		echo torrent is already installed.
 	else	
-		go get github.com/anacrolix/torrent/cmd/torrent
+		go get -v github.com/anacrolix/torrent/cmd/torrent
 	fi
 	type webtorrent
 	if [ $? -eq 0 ]; then
