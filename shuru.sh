@@ -43,7 +43,7 @@ function setup_pro()
 		type npm
 		if [ $? -eq 0 ]; then
 			curl -L https://git.io/n-install | bash -s -- -y
-			bash $HOME/.bashrc
+			source .bashrc
 		fi
 		npm install webtorrent-cli -g
 	fi
