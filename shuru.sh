@@ -19,7 +19,7 @@ function setup_pro()
 	if [ $? -eq 0 ]; then
 		echo Mega-cmd is already installed.
 	else
-		curl -sL -o/var/cache/apt/archives/MEGAcmd.deb https://mega.nz/linux/MEGAsync/Debian_9.0/amd64/megacmd-Debian_9.0_amd64.deb && sudo dpkg -i /var/cache/apt/archives/MEGAcmd.deb
+		sudo curl -sL -o/var/cache/apt/archives/MEGAcmd.deb https://mega.nz/linux/MEGAsync/Debian_9.0/amd64/megacmd-Debian_9.0_amd64.deb && sudo dpkg -i /var/cache/apt/archives/MEGAcmd.deb
 	fi
 	# END #
 	
